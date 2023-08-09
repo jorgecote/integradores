@@ -176,11 +176,11 @@ La resistencia R1 fue modificada a la mitad para dar un factor de ganancia de 2.
 En la figura se observa que el tiempo de carga del circuito cambió por lo tanto cambió la ganancia. Al calcular la pendiente de la pseudorecta se obtiene:
 
 ```matlab:Code
-pendiente = -1.215 / 592e-3       
+pendiente = -1.26 / 632e-3       
 ```
 
 ```text:Output
-pendiente = -2.0524
+pendiente = -1.993
 ```
 
 El resultado muestra que la pendiente aumentó a aproximadamente -2. Lo anterior valida el diseño de acuerdo a las condiciones deseadas.
