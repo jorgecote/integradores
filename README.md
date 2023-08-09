@@ -7,7 +7,7 @@ Específicamente en el área de control son necesarias las operaciones de integr
 
 # Circuitos integradores
 
-Los circuitos integradores, basados en amplificadores operacionales, más utilizados son el integrado clásico y el integrador de Miller; debido a su simplicidad en la implementación y en la manera de diseñarlos. A continuación se mostrará algunos detalles en el momento del diseño y de la implementación.
+Los circuitos integradores, basados en amplificadores operacionales, más utilizados son el integrador clásico y el integrador de Miller; debido a su simplicidad en la implementación y en la manera de diseñarlos. A continuación se mostrará algunos detalles en el momento del diseño y de la implementación.
 
 ## Integrador Clásico
 
@@ -17,14 +17,14 @@ El integrador clásico solamente requiere dos componentes asociados al amplifica
 
 ![image_0.png](Integrador_images/image_0.png)
 
-En la figura se puede observar el esquema del integrador, es evidente que el elemento que se utiliza para retroalimentar es el capacitor y la resisitencia se ubica a la entrada del circuito. La entrada no inversora esta conectada a tierra por lo tanto el circuito es inversor los cual se evidencia en la función de voltaje de salida obtenida.
+En la figura se puede observar el esquema del integrador, es evidente que el elemento que se utiliza para retroalimentar es el capacitor y la resisitencia se ubica a la entrada del circuito. La entrada no inversora está conectada a tierra por lo tanto el circuito es inversor lo cual se evidencia en la función de voltaje de salida obtenida.
 
-Sabiendo que las corrientes de entrada al amplificador son 0 en ambas entradas y que la tensión en abbas entradas es la misma, se observa en el desarrollo matemático presentado en la figura que la resistencia está conectada entre la fuente y tierra (virtualmente) y que el capacitor esta conectado entre la salida y tierra (virtualmente), por lo cual, la tensión en el capacitor es la tensión de salida.
+Sabiendo que las corrientes de entrada al amplificador son 0 A en ambas entradas y que la tensión en ambas entradas es la misma, se observa en el desarrollo matemático presentado en la figura que la resistencia está conectada entre la fuente y tierra (virtualmente) y que el capacitor esta conectado entre la salida y tierra (virtualmente), por lo cual, la tensión en el capacitor es la tensión de salida.
 
 Al despejar la salida de la ecuación obtenida queda indicada la integral de la tensión de entrada, obteniendose:
 
 $$
-V_{o\;} =-\frac{1}{\textrm{RC}}\int V_{i\;} \textrm{dt}
+V_{o\} =-\frac{1}{\textrm{RC}}\int V_{i\} \textrm{dt}
 $$
 
 Esta expresión indica preliminarmente que la ganancia depende de R y C, sin embargo es importante anotar que la selección del condensador garantizará que la integral se ejecute adecuadamente sin ganancias no deseadas.
@@ -36,7 +36,7 @@ Para el diseño de este tipo de integradores es necesario plantear dos condicion
    -  La ganancia que se requiere 
    -  La ejecución de la integral 
 
-Para satisfacer esto se planteara un ejemplo donde se buscará ganancia 1.
+Para satisfacer esto, se planteará un ejemplo donde se buscará ganancia 1.
 
 De la expresión se puede inferir fácilmente que RC = 1
 
@@ -98,7 +98,7 @@ Los resultados de la simulación revelan que se obtiene una pendiente cercana a 
   
 ## Integrador de Miller
 
-El integrador de Miller requiere una resistencia adicional en paralelo con el capacitor, esta resistencia ofrece más estabilidad en el circuito y permite manejar de manera independiente las 2 condiciones antes mencionadas, ejecución de la integral y ganancia.
+El integrador de Miller requiere una resistencia adicional en paralelo con el capacitor, esta resistencia ofrece estabilidad (llega a un valor constante) en el circuito y permite manejar de manera independiente las 2 condiciones antes mencionadas, ejecución de la integral y ganancia.
 
 El circuito luce de la siguiente manera:
 
@@ -106,7 +106,7 @@ El circuito luce de la siguiente manera:
 
   
 
-En la figura se observa una estructura similar que al realizar el mismo análisis del integrador clásico a la salida se obtiene que la ecuación diferencial que se obtiene no es de variables separables; por esta razon este circuito es analizado desde el dominio de la frecuencia por medio de la transformada de LaPlace. La función de transferencia que describe el circuito es la siguiente:
+En la figura se observa una estructura similar que al realizar el mismo análisis del integrador clásico a la salida se obtiene que la ecuación diferencial obtenida no es de variables separables; por esta razón este circuito es analizado desde el dominio de la frecuencia por medio de la transformada de LaPlace. La función de transferencia que describe el circuito es la siguiente:
 
 $$
 \frac{V_o }{V_{\textrm{in}\;} }=\frac{{-R}_F }{R_{1\;} }\frac{1}{\;R_F \textrm{Cs}+1}
@@ -145,17 +145,17 @@ R1 = 6.3200e+04
 
 ```
 
-Con los componentes calulados la simulación realizada arroja lo siguiente:
+Con los componentes calculados la simulación realizada arroja lo siguiente:
 
 ![image_6.png](Integrador_images/image_6.png)
 
-Si la entrrada vin = 1 V entonces la salida de este circuito es vo = -t V, es decir una recta decreciente de pendiente 1.
+Si la entrada vin = 1 V entonces la salida de este circuito es vo = -t V, es decir una recta decreciente de pendiente 1.
 
 ![image_7.png](Integrador_images/image_7.png)
 
   
 
-Se puede observar que la forma es la esperada. Así mismo que no es una recta perfecta sino que esta combinada con una exponencial, lo cual evidencia que la operación es una aproximación. Al calcular la pendiente entre los marcadores del osciloscopio se observa que la pendiente es muy aproximada a -1:
+Se puede observar que la forma es la esperada. Así mismo, que no es una recta perfecta sino que esta combinada con una exponencial, lo cual evidencia que la operación es una aproximación. Al calcular la pendiente entre los marcadores del osciloscopio se observa que la pendiente es muy aproximada a -1:
 
 ```matlab:Code
 pendiente = -623e-3 / 617e-3    % La pendiente sería deltaV / deltat
@@ -165,7 +165,7 @@ pendiente = -623e-3 / 617e-3    % La pendiente sería deltaV / deltat
 pendiente = -1.0097
 ```
 
-Esto muestra que se está cumpliendo el objetivo propuesto. Si lo que se quiere es dar otra ganancia al circuito desde las resistencia es posible, acontinuación se ajusta la simulación para ganancia de 2:
+Esto muestra que se está cumpliendo el objetivo propuesto. Si lo que se quiere es dar otra ganancia al circuito desde las resistencia es posible, a continuación se ajusta la simulación para ganancia de 2:
 
 ![image_8.png](Integrador_images/image_8.png)
 
@@ -173,7 +173,7 @@ La resistencia R1 fue modificada a la mitad para dar un factor de ganancia de 2.
 
 ![image_9.png](Integrador_images/image_9.png)
 
-En la figura se observa que el tiempo de carga del circuito cambio por lo tanto cambió la ganancia. Al calcular la pendiente de la pseudorecta se obtiene:
+En la figura se observa que el tiempo de carga del circuito cambió por lo tanto cambió la ganancia. Al calcular la pendiente de la pseudorecta se obtiene:
 
 ```matlab:Code
 pendiente = -1.215 / 592e-3       
