@@ -171,7 +171,7 @@ Esto muestra que se está cumpliendo el objetivo propuesto. Si lo que se quiere 
 
 La resistencia R1 fue modificada a la mitad para dar un factor de ganancia de 2. El resultado es el siguiente:
 
-![image_9.png](Integrador_images/image_9.png)
+![image_9.png](Integrador_images/Captura2.PNG)
 
 En la figura se observa que el tiempo de carga del circuito cambió por lo tanto cambió la ganancia. Al calcular la pendiente de la pseudorecta se obtiene:
 
