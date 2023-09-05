@@ -1,4 +1,4 @@
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jorgecote/integradores)
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=jorgecote/integradores&file=https://github.com/jorgecote/integradores/blob/main/Integrador.mlx)
 # Diseño de integradores con amplificadores operacionales para entradas de tensión constante
 # Introducción
 
